@@ -4,65 +4,37 @@ public class GildedRose {
 
     private Normal item;
 
-    private String name;
-    private int quality;
-    private int daysRemaining;
-
     public GildedRose(String name, int quality, int daysRemaining) {
-        this.name = name;
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
+        this.item = klassFor(name, quality, daysRemaining);
+    }
+
+    private Normal klassFor(String name, int quality, int daysRemaining) {
+        switch (name) {
+            case "normal":
+                return new Normal(quality, daysRemaining);
+            case "Aged Brie":
+                return new Brie(quality, daysRemaining);
+            case "Sulfuras, Hand of Ragnaros":
+                return new Sulfuras(quality, daysRemaining);
+            case "Backstage passes to a TAFKAL80ETC concert":
+                return new Backstage(quality, daysRemaining);
+        }
+        throw new RuntimeException("Unknown class: " + name);
     }
 
     public void tick() {
-
-        switch (name) {
-            case "normal":
-                normalTick();
-                return;
-            case "Aged Brie":
-                brieTick();
-                return;
-            case "Sulfuras, Hand of Ragnaros":
-                sulfurasTick();
-                return;
-            case "Backstage passes to a TAFKAL80ETC concert":
-                backstageTick();
-        }
-    }
-
-    private void normalTick() {
-        item = new Normal(quality, daysRemaining);
-        item.tick();
-    }
-
-    private void brieTick() {
-        item = new Brie(quality, daysRemaining);
-        item.tick();
-    }
-
-    private void sulfurasTick() {
-        item = new Sulfuras(quality, daysRemaining);
-        item.tick();
-    }
-
-    private void backstageTick() {
-        item = new Backstage(quality, daysRemaining);
         item.tick();
     }
 
     public String getName() {
-        if(item != null) return item.getName();
-        return name;
+        return item.getName();
     }
 
     public int getQuality() {
-        if(item != null) return item.getQuality();
-        return quality;
+        return item.getQuality();
     }
 
     public int getDaysRemaining() {
-        if(item != null) return item.getDaysRemaining();
-        return daysRemaining;
+        return item.getDaysRemaining();
     }
 }
