@@ -1,11 +1,7 @@
-public class Normal {
-
-    int quality;
-    int daysRemaining;
+public class Normal extends Item {
 
     public Normal(int quality, int daysRemaining) {
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
+        super(quality, daysRemaining);
     }
 
     public void tick() {
@@ -18,17 +14,5 @@ public class Normal {
         if(daysRemaining <= 0) {
             quality -= 1;
         }
-    }
-
-    public String getName() {
-        return "normal";
-    }
-
-    public int getQuality() {
-        return quality;
-    }
-
-    public int getDaysRemaining() {
-        return daysRemaining;
     }
 }

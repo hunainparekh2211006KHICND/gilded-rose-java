@@ -1,4 +1,4 @@
-public class Backstage extends Normal {
+public class Backstage extends Item {
     public Backstage(int quality, int daysRemaining) {
         super(quality, daysRemaining);
     }

@@ -1,4 +1,4 @@
-public class Brie extends Normal {
+public class Brie extends Item {
     public Brie(int quality, int daysRemaining) {
         super(quality, daysRemaining);
     }
