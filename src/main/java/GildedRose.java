@@ -12,66 +12,54 @@ public class GildedRose {
         this.daysRemaining = daysRemaining;
     }
 
-    public void normalTick() {
-        if(quality != 0) {
-            if(daysRemaining > 0) {
-                quality -= 1;
-            }
-            if(daysRemaining <= 0) {
-                quality -= 2;
-            }
+    public void tick() {
+
+        switch (name) {
+            case "normal":
+                normalTick();
+                return;
+            case "Aged Brie":
+                brieTick();
+                return;
+            case "Sulfuras, Hand of Ragnaros":
+                sulfurasTick();
+                return;
+            case "Backstage passes to a TAFKAL80ETC concert":
+                backstageTick();
         }
-        daysRemaining -= 1;
     }
 
-    public void tick() {
-        if(StringUtils.equals(name, "normal")) {
-            normalTick();
+    private void normalTick() {
+        daysRemaining -= 1;
+        if(quality == 0) return;
+
+        quality -= 1;
+        if(daysRemaining <= 0) quality -= 1;
+    }
+
+    private void brieTick() {
+        daysRemaining -= 1;
+        if(quality >= 50) return;
+
+        quality += 1;
+        if(daysRemaining <= 0) quality += 1;
+    }
+
+    private void sulfurasTick() {
+
+    }
+
+    private void backstageTick() {
+        daysRemaining -= 1;
+        if(quality >= 50) return;
+        if(daysRemaining < 0) {
+            quality = 0;
             return;
         }
 
-        if(!StringUtils.equals(name, "Aged Brie") && !StringUtils.equals(name, "Backstage passes to a TAFKAL80ETC concert")) {
-            if(quality > 0) {
-                if(!StringUtils.equals(name, "Sulfuras, Hand of Ragnaros")) {
-                    quality -= 1;
-                }
-            }
-        } else {
-            if(quality < 50) {
-                quality += 1;
-                if(StringUtils.equals(name, "Backstage passes to a TAFKAL80ETC concert")) {
-                    if(daysRemaining < 11) {
-                        if(quality < 50) {
-                            quality += 1;
-                        }
-                    }
-                    if(daysRemaining < 6) {
-                        if(quality < 50) {
-                            quality += 1;
-                        }
-                    }
-                }
-            }
-        }
-        if(!StringUtils.equals(name, "Sulfuras, Hand of Ragnaros")) {
-            daysRemaining -= 1;
-        }
-        if(daysRemaining < 0) {
-            if(!StringUtils.equals(name, "Aged Brie")) {
-                if(!StringUtils.equals(name, "Backstage passes to a TAFKAL80ETC concert")) {
-                    if(quality > 0) {
-                        if(!StringUtils.equals(name, "Sulfuras, Hand of Ragnaros")) {
-                            quality -=1;
-                        }
-                    }
-                } else {
-                    quality = quality - quality;
-                }
-            } else {
-                if(quality < 50) {
-                    quality += 1;
-                }
-            }
-        }
+        quality += 1;
+        if(daysRemaining < 10) quality += 1;
+        if(daysRemaining < 5) quality += 1;
     }
+
 }
