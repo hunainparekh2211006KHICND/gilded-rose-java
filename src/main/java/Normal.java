@@ -1,7 +1,7 @@
 public class Normal {
 
-    private int quality;
-    private int daysRemaining;
+    int quality;
+    int daysRemaining;
 
     public Normal(int quality, int daysRemaining) {
         this.quality = quality;
