@@ -42,7 +42,8 @@ public class GildedRose {
     }
 
     private void sulfurasTick() {
-
+        item = new Sulfuras(quality, daysRemaining);
+        item.tick();
     }
 
     private void backstageTick() {
