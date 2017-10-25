@@ -31,18 +31,26 @@ public class GildedRose {
 
     private void normalTick() {
         daysRemaining -= 1;
-        if(quality == 0) return;
+        if(quality == 0) {
+            return;
+        }
 
         quality -= 1;
-        if(daysRemaining <= 0) quality -= 1;
+        if(daysRemaining <= 0) {
+            quality -= 1;
+        }
     }
 
     private void brieTick() {
         daysRemaining -= 1;
-        if(quality >= 50) return;
+        if(quality >= 50) {
+            return;
+        }
 
         quality += 1;
-        if(daysRemaining <= 0) quality += 1;
+        if(daysRemaining <= 0) {
+            quality += 1;
+        }
     }
 
     private void sulfurasTick() {
@@ -51,15 +59,21 @@ public class GildedRose {
 
     private void backstageTick() {
         daysRemaining -= 1;
-        if(quality >= 50) return;
+        if(quality >= 50) {
+            return;
+        }
         if(daysRemaining < 0) {
             quality = 0;
             return;
         }
 
         quality += 1;
-        if(daysRemaining < 10) quality += 1;
-        if(daysRemaining < 5) quality += 1;
+        if(daysRemaining < 10) {
+            quality += 1;
+        }
+        if(daysRemaining < 5) {
+            quality += 1;
+        }
     }
 
 }
