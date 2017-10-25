@@ -12,7 +12,24 @@ public class GildedRose {
         this.daysRemaining = daysRemaining;
     }
 
+    public void normalTick() {
+        if(quality != 0) {
+            if(daysRemaining > 0) {
+                quality -= 1;
+            }
+            if(daysRemaining <= 0) {
+                quality -= 2;
+            }
+        }
+        daysRemaining -= 1;
+    }
+
     public void tick() {
+        if(StringUtils.equals(name, "normal")) {
+            normalTick();
+            return;
+        }
+
         if(!StringUtils.equals(name, "Aged Brie") && !StringUtils.equals(name, "Backstage passes to a TAFKAL80ETC concert")) {
             if(quality > 0) {
                 if(!StringUtils.equals(name, "Sulfuras, Hand of Ragnaros")) {
