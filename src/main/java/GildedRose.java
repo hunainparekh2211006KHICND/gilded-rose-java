@@ -48,7 +48,7 @@ public class GildedRose {
         }
 
         quality += 1;
-        if(daysRemaining <= 0) {
+        if(daysRemaining <= 0 && quality < 50) {
             quality += 1;
         }
     }
