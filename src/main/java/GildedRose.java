@@ -2,9 +2,11 @@ import org.apache.commons.lang3.StringUtils;
 
 public class GildedRose {
 
-    public String name;
-    public int quality;
-    public int daysRemaining;
+    private Normal item;
+
+    private String name;
+    private int quality;
+    private int daysRemaining;
 
     public GildedRose(String name, int quality, int daysRemaining) {
         this.name = name;
@@ -30,15 +32,8 @@ public class GildedRose {
     }
 
     private void normalTick() {
-        daysRemaining -= 1;
-        if(quality == 0) {
-            return;
-        }
-
-        quality -= 1;
-        if(daysRemaining <= 0) {
-            quality -= 1;
-        }
+        item = new Normal(quality, daysRemaining);
+        item.tick();
     }
 
     private void brieTick() {
@@ -76,4 +71,18 @@ public class GildedRose {
         }
     }
 
+    public String getName() {
+        if(item != null) return item.getName();
+        return name;
+    }
+
+    public int getQuality() {
+        if(item != null) return item.getQuality();
+        return quality;
+    }
+
+    public int getDaysRemaining() {
+        if(item != null) return item.getDaysRemaining();
+        return daysRemaining;
+    }
 }
