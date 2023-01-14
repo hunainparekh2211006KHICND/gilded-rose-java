@@ -4,6 +4,7 @@ public class Conjured extends Item{
     }
 
     public void tick(){
-        
+        daysRemaining -=1;
+        quality-=2;
     }
 }
