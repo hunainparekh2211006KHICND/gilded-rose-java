@@ -8,12 +8,10 @@ public class GildedRose {
 
     public GildedRose(String name, int quality, int daysRemaining) {
         this.name = name;
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
-        this.item = classChanger(name);
+        this.item = classChanger(name,quality,daysRemaining);
     }
 
-    public Item classChanger(String name){
+    public Item classChanger(String name,int quality,int daysRemaining){
         switch (name){
             case "normal":
                 return new Normal(quality, daysRemaining);
