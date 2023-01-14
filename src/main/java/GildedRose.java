@@ -11,10 +11,10 @@ public class GildedRose {
     }
 
     public void normal_tick(){
-        daysRemaining -=1;
-        if(quality == 0) return;
-        quality -=1;
-        if(daysRemaining <=0) quality -=1;
+        Normal item = new Normal(quality, daysRemaining);
+        item.tick();
+        this.quality = item.quality;
+        this.daysRemaining = item.daysRemaining;
     }
 
     public void brie_tick(){
@@ -39,7 +39,6 @@ public class GildedRose {
     }
 
     public void tick() {
-
         switch (name){
             case "normal":
                 normal_tick();
