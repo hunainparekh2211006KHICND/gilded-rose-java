@@ -10,47 +10,31 @@ public class GildedRose {
         this.daysRemaining = daysRemaining;
     }
 
-    public void normal_tick(){
-        Normal item = new Normal(quality, daysRemaining);
-        item.tick();
-        this.quality = item.quality;
-        this.daysRemaining = item.daysRemaining;
-    }
-
-    public void brie_tick(){
-        Brie item = new Brie(quality, daysRemaining);
-        item.tick();
-        this.quality = item.quality;
-        this.daysRemaining = item.daysRemaining;
-    }
-
-    public void sulfuras_tick(){
-        Sulfuras item = new Sulfuras(quality, daysRemaining);
-        item.tick();
-        this.quality = item.quality;
-        this.daysRemaining = item.daysRemaining;
-    }
-
-    public void backstage_tick(){
-        Backstage item = new Backstage(quality, daysRemaining);
-        item.tick();
-        this.quality = item.quality;
-        this.daysRemaining = item.daysRemaining;
-    }
-
     public void tick() {
         switch (name){
             case "normal":
-                normal_tick();
+                Normal normal = new Normal(quality, daysRemaining);
+                normal.tick();
+                this.quality = normal.quality;
+                this.daysRemaining = normal.daysRemaining;
                 return;
             case "Aged Brie":
-                brie_tick();
+                Brie brie = new Brie(quality, daysRemaining);
+                brie.tick();
+                this.quality = brie.quality;
+                this.daysRemaining = brie.daysRemaining;
                 return;
             case "Sulfuras, Hand of Ragnaros":
-                sulfuras_tick();
+                Sulfuras sulfuras = new Sulfuras(quality, daysRemaining);
+                sulfuras.tick();
+                this.quality = sulfuras.quality;
+                this.daysRemaining = sulfuras.daysRemaining;
                 return;
             case "Backstage passes to a TAFKAL80ETC concert":
-                backstage_tick();
+                Backstage backstage = new Backstage(quality, daysRemaining);
+                backstage.tick();
+                this.quality = backstage.quality;
+                this.daysRemaining = backstage.daysRemaining;
                 return;
         }
     }
