@@ -4,38 +4,32 @@ public class GildedRose {
     public int quality;
     public int daysRemaining;
 
+    public Item item;
+
     public GildedRose(String name, int quality, int daysRemaining) {
         this.name = name;
         this.quality = quality;
         this.daysRemaining = daysRemaining;
+        this.item = classChanger(name);
+    }
+
+    public Item classChanger(String name){
+        switch (name){
+            case "normal":
+                return new Normal(quality, daysRemaining);
+            case "Aged Brie":
+                return new Brie(quality, daysRemaining);
+            case "Sulfuras, Hand of Ragnaros":
+                return new Sulfuras(quality, daysRemaining);
+            case "Backstage passes to a TAFKAL80ETC concert":
+                return new Backstage(quality, daysRemaining);
+        }
+        throw new RuntimeException("Unknown class: " + name);
     }
 
     public void tick() {
-        switch (name){
-            case "normal":
-                Item normal = new Normal(quality, daysRemaining);
-                normal.tick();
-                this.quality = normal.quality;
-                this.daysRemaining = normal.daysRemaining;
-                return;
-            case "Aged Brie":
-                Item brie = new Brie(quality, daysRemaining);
-                brie.tick();
-                this.quality = brie.quality;
-                this.daysRemaining = brie.daysRemaining;
-                return;
-            case "Sulfuras, Hand of Ragnaros":
-                Item sulfuras = new Sulfuras(quality, daysRemaining);
-                sulfuras.tick();
-                this.quality = sulfuras.quality;
-                this.daysRemaining = sulfuras.daysRemaining;
-                return;
-            case "Backstage passes to a TAFKAL80ETC concert":
-                Item backstage = new Backstage(quality, daysRemaining);
-                backstage.tick();
-                this.quality = backstage.quality;
-                this.daysRemaining = backstage.daysRemaining;
-                return;
-        }
+        item.tick();
+        this.quality = item.quality;
+        this.daysRemaining = item.daysRemaining;
     }
 }
