@@ -3,8 +3,7 @@ public class GildedRose {
     public String name;
     public int quality;
     public int daysRemaining;
-
-    public Item item;
+    private Item item;
 
     public GildedRose(String name, int quality, int daysRemaining) {
         this.name = name;
@@ -21,6 +20,8 @@ public class GildedRose {
                 return new Sulfuras(quality, daysRemaining);
             case "Backstage passes to a TAFKAL80ETC concert":
                 return new Backstage(quality, daysRemaining);
+            case "Conjured Item":
+                return new Conjured(quality, daysRemaining);
         }
         throw new RuntimeException("Unknown class: " + name);
     }

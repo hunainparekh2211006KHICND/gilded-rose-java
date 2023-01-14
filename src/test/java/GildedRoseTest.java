@@ -233,9 +233,8 @@ public class GildedRoseTest {
         assertEquals(0, item.quality);
         assertEquals(-2, item.daysRemaining);
     }
-
+    // ------------------------------------- Conjured -----------------------------------------------------------------
     @Test
-    @Ignore
     public void testConjuredItemBeforeSellDate() {
         GildedRose item = new GildedRose("Conjured Item", 10, 5);
         item.tick();
@@ -245,7 +244,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    @Ignore
     public void testConjuredItemAtZeroQuality() {
         GildedRose item = new GildedRose("Conjured Item", 1, 1);
         item.tick();
@@ -255,7 +253,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    @Ignore
     public void testConjuredItemOnSellDate() {
         GildedRose item = new GildedRose("Conjured Item", 10, 0);
         item.tick();
@@ -265,7 +262,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    @Ignore
     public void testConjuredItemOnSellDateAtZeroQuality() {
         GildedRose item = new GildedRose("Conjured Item", 0, 0);
         item.tick();
@@ -275,7 +271,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    @Ignore
     public void testConjuredItemAfterSellDate() {
         GildedRose item = new GildedRose("Conjured Item", 10, -1);
         item.tick();
@@ -285,7 +280,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    @Ignore
     public void testConjuredItemAfterSellDateAtZeroQuality() {
         GildedRose item = new GildedRose("Conjured Item", 0, -1);
         item.tick();
