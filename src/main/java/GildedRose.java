@@ -19,11 +19,19 @@ public class GildedRose {
         if(daysRemaining <=0) quality -=1;
     }
 
+    public void brie_tick(){
+
+    }
+
     public void tick() {
 
-        if(StringUtils.equals(name, "normal")){
-           normal_tick();
-           return;
+        switch (name){
+            case "normal":
+                normal_tick();
+                return;
+            case "Aged Brie":
+                brie_tick();
+                return;
         }
 
         if(!StringUtils.equals(name, "Aged Brie") && !StringUtils.equals(name, "Backstage passes to a TAFKAL80ETC concert")) {
