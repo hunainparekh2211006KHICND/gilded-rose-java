@@ -18,24 +18,24 @@ public class GildedRose {
     }
 
     public void brie_tick(){
-        daysRemaining -=1;
-        if(quality ==50) return;
-        quality+=1;
-        if(quality ==50) return;
-        if(daysRemaining <= 0) quality +=1;
+        Brie item = new Brie(quality, daysRemaining);
+        item.tick();
+        this.quality = item.quality;
+        this.daysRemaining = item.daysRemaining;
     }
 
     public void sulfuras_tick(){
-
+        Sulfuras item = new Sulfuras(quality, daysRemaining);
+        item.tick();
+        this.quality = item.quality;
+        this.daysRemaining = item.daysRemaining;
     }
 
     public void backstage_tick(){
-        daysRemaining -=1;
-        if(quality == 50) return;
-        quality +=1;
-        if(daysRemaining <=10) quality +=1;
-        if(daysRemaining < 5) quality +=1;
-        if(daysRemaining < 0) quality =0;
+        Backstage item = new Backstage(quality, daysRemaining);
+        item.tick();
+        this.quality = item.quality;
+        this.daysRemaining = item.daysRemaining;
     }
 
     public void tick() {
