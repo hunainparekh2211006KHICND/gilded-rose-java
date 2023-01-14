@@ -1,10 +1,7 @@
-public class Normal {
-    public int quality;
-    public int daysRemaining;
-
+public class Normal extends Item{
+    
     public Normal(int quality, int daysRemaining) {
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
+        super(quality, daysRemaining);
     }
 
     public void tick(){

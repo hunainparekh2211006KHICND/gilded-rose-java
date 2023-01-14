@@ -13,25 +13,25 @@ public class GildedRose {
     public void tick() {
         switch (name){
             case "normal":
-                Normal normal = new Normal(quality, daysRemaining);
+                Item normal = new Normal(quality, daysRemaining);
                 normal.tick();
                 this.quality = normal.quality;
                 this.daysRemaining = normal.daysRemaining;
                 return;
             case "Aged Brie":
-                Brie brie = new Brie(quality, daysRemaining);
+                Item brie = new Brie(quality, daysRemaining);
                 brie.tick();
                 this.quality = brie.quality;
                 this.daysRemaining = brie.daysRemaining;
                 return;
             case "Sulfuras, Hand of Ragnaros":
-                Sulfuras sulfuras = new Sulfuras(quality, daysRemaining);
+                Item sulfuras = new Sulfuras(quality, daysRemaining);
                 sulfuras.tick();
                 this.quality = sulfuras.quality;
                 this.daysRemaining = sulfuras.daysRemaining;
                 return;
             case "Backstage passes to a TAFKAL80ETC concert":
-                Backstage backstage = new Backstage(quality, daysRemaining);
+                Item backstage = new Backstage(quality, daysRemaining);
                 backstage.tick();
                 this.quality = backstage.quality;
                 this.daysRemaining = backstage.daysRemaining;

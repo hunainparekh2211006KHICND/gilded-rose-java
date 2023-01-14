@@ -1,10 +1,7 @@
-public class Backstage {
-    public int quality;
-    public int daysRemaining;
+public class Backstage extends Item{
 
     public Backstage(int quality, int daysRemaining) {
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
+        super(quality, daysRemaining);
     }
 
     public void tick(){

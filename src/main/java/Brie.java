@@ -1,10 +1,7 @@
-public class Brie {
-    public int quality;
-    public int daysRemaining;
-
+public class Brie extends Item {
+    
     public Brie(int quality, int daysRemaining) {
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
+        super(quality, daysRemaining);
     }
 
     public void tick(){

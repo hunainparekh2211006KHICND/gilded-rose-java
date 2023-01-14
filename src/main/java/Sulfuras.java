@@ -1,12 +1,6 @@
-public class Sulfuras {
-    public int quality;
-    public int daysRemaining;
+public class Sulfuras extends Item{
 
     public Sulfuras(int quality, int daysRemaining) {
-        this.quality = quality;
-        this.daysRemaining = daysRemaining;
-    }
-
-    public void tick(){
+        super(quality, daysRemaining);
     }
 }
