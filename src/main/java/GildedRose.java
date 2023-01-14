@@ -12,17 +12,18 @@ public class GildedRose {
         this.daysRemaining = daysRemaining;
     }
 
+    public void normal_tick(){
+        daysRemaining -=1;
+        if(quality == 0) return;
+        quality -=1;
+        if(daysRemaining <=0) quality -=1;
+    }
+
     public void tick() {
 
         if(StringUtils.equals(name, "normal")){
-            if(quality != 0){
-                quality -=1;
-                if(daysRemaining <= 0){
-                    quality -=1;
-                }
-            }
-            daysRemaining -=1;
-            return;
+           normal_tick();
+           return;
         }
 
         if(!StringUtils.equals(name, "Aged Brie") && !StringUtils.equals(name, "Backstage passes to a TAFKAL80ETC concert")) {
