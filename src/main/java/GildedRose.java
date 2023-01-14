@@ -21,13 +21,9 @@ public class GildedRose {
 
     public void brie_tick(){
         daysRemaining -=1;
-        if(quality ==50){
-            return;
-        }
+        if(quality ==50) return;
         quality+=1;
-        if(quality ==50){
-            return;
-        }
+        if(quality ==50) return;
         if(daysRemaining <= 0) quality +=1;
     }
 
@@ -37,6 +33,7 @@ public class GildedRose {
 
     public void backstage_tick(){
         daysRemaining -=1;
+        if(quality == 50) return;
         quality +=1;
         if(daysRemaining <=10) quality +=1;
     }
