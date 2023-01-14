@@ -21,7 +21,7 @@ public class GildedRose {
 
     public void brie_tick(){
         daysRemaining -=1;
-        quality+=1;
+        if(quality != 50) quality+=1;
     }
 
     public void tick() {
