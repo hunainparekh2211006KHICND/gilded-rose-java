@@ -36,6 +36,7 @@ public class GildedRose {
         if(quality == 50) return;
         quality +=1;
         if(daysRemaining <=10) quality +=1;
+        if(daysRemaining < 5) quality +=1;
     }
 
     public void tick() {
