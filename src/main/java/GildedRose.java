@@ -16,6 +16,9 @@ public class GildedRose {
 
         if(StringUtils.equals(name, "normal")){
             quality -=1;
+            if(daysRemaining == 0){
+                quality -=1;
+            }
             daysRemaining -=1;
             return;
         }
