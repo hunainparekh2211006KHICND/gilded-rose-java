@@ -1,5 +1,7 @@
 import org.apache.commons.lang3.StringUtils;
 
+import com.google.common.cache.Cache;
+
 public class GildedRose {
 
     public String name;
@@ -31,6 +33,10 @@ public class GildedRose {
         if(daysRemaining <= 0) quality +=1;
     }
 
+    public void sulfuras_tick(){
+
+    }
+
     public void tick() {
 
         switch (name){
@@ -39,6 +45,9 @@ public class GildedRose {
                 return;
             case "Aged Brie":
                 brie_tick();
+                return;
+            case "Sulfuras, Hand of Ragnaros":
+                sulfuras_tick();
                 return;
         }
 

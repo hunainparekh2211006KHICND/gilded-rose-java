@@ -134,7 +134,7 @@ public class GildedRoseTest {
         assertEquals(-1, item.daysRemaining);
     }
 
-    // ------------------------------------- sulfuras -----------------------------------------------------------------
+    // ------------------------------------- Backstage -----------------------------------------------------------------
     @Test
     public void testBackStagePassLongBeforeSellDate() {
         GildedRose item = new GildedRose("Backstage passes to a TAFKAL80ETC concert", 10, 30);
