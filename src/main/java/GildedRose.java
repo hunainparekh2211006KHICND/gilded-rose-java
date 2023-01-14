@@ -15,6 +15,8 @@ public class GildedRose {
     public void tick() {
 
         if(StringUtils.equals(name, "normal")){
+            quality -=1;
+            daysRemaining -=1;
             return;
         }
 
