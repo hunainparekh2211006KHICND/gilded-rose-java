@@ -20,9 +20,15 @@ public class GildedRose {
     }
 
     public void brie_tick(){
-        if(quality != 50) quality+=1;
-        if(daysRemaining == 0) quality +=1;
         daysRemaining -=1;
+        if(quality ==50){
+            return;
+        }
+        quality+=1;
+        if(quality ==50){
+            return;
+        }
+        if(daysRemaining <= 0) quality +=1;
     }
 
     public void tick() {
