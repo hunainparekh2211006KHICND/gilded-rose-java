@@ -36,7 +36,8 @@ public class GildedRose {
     }
 
     public void backstage_tick(){
-
+        daysRemaining -=1;
+        quality +=1;
     }
 
     public void tick() {
