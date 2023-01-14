@@ -286,6 +286,6 @@ public class GildedRoseTest {
         assertEquals(0, item.quality);
         assertEquals(-2, item.daysRemaining);
     }
-
+ // ------------------------------------- All Test Passed -----------------------------------------------------------------
 }
 
