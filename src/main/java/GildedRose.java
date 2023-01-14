@@ -1,7 +1,5 @@
 import org.apache.commons.lang3.StringUtils;
 
-import com.google.common.cache.Cache;
-
 public class GildedRose {
 
     public String name;
@@ -37,6 +35,10 @@ public class GildedRose {
 
     }
 
+    public void backstage_tick(){
+
+    }
+
     public void tick() {
 
         switch (name){
@@ -48,6 +50,9 @@ public class GildedRose {
                 return;
             case "Sulfuras, Hand of Ragnaros":
                 sulfuras_tick();
+                return;
+            case "Backstage passes to a TAFKAL80ETC concert":
+                backstage_tick();
                 return;
         }
 
